@@ -1,0 +1,46 @@
+<h2>New User</h2>
+<div class="container">
+  <%= form_for @new_user_form, url: users_path, method: :post, data: { turbo: false } do |f| %>
+    <%= render "shared/error_messages", object: @result %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :major %><br />
+      <%= f.text_field :major, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :skill %><br />
+      <%= f.text_field :skill, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address_name %><br />
+      <%= f.text_field :address_name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :note %><br />
+      <%= f.text_field :note, autofocus: true %>
+    </div>
+
+
+    <div>
+      <%= f.submit "Sign up", class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
